@@ -6,7 +6,9 @@ import android.content.Intent
 import android.widget.Toast
 
 class BroadcastReceiver: BroadcastReceiver() {
-    override fun onReceive(context: Context?, intent: Intent?) {
+    override fun onReceive(context: Context, intent: Intent?) {
         Toast.makeText(context, "Static Broadcast", Toast.LENGTH_SHORT).show()
+
+        NotificationUtil(context).notifyUtil()
     }
 }

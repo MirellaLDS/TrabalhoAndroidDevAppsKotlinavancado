@@ -17,8 +17,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ResultActivity" />
+
         <receiver
-            android:name=".broadCast.BroadcastReceiver"
+            android:name=".BroadcastReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
