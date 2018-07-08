@@ -14,6 +14,14 @@ import android.widget.Toast
 class MyIntentService : IntentService("MyIntentService") {
     override fun onHandleIntent(intent: Intent?) {
 
+        intent?.let {
+            val intentExtras = it.extras
+            if (intentExtras != null) {
+                val title = intentExtras.getString(MainActivity.NOTIFICATION_EXTRA_UTIL)
+                Log.i(">>> Mirella", title)
+            }
+        }
+
     }
 
 }

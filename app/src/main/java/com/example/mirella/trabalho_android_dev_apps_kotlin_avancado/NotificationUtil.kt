@@ -17,7 +17,7 @@ class NotificationUtil (var context: Context) {
 
     fun notifyUtil() {
         val notificationManager: NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val notifyIntent = Intent(context, ResultActivity::class.java)
+        val notifyIntent = Intent(context, MainActivity::class.java)
 
         val title = "Sample Notification"
         val message = "You have received a sample NotificationUtil. This NotificationUtil will take you to the details page."

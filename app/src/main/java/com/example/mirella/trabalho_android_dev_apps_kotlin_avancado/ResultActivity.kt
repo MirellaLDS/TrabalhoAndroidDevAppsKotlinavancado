@@ -31,12 +31,6 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        val intentExtras = intent.extras
-        if (intentExtras != null) {
-            val title = intentExtras.getString("message")
-            Toast.makeText(baseContext, title, Toast.LENGTH_LONG).show()
-        }
-
         image.setOnClickListener {
             showPictureDialog()
         }
