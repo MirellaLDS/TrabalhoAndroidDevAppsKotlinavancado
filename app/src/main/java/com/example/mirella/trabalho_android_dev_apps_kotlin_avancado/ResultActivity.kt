@@ -31,6 +31,12 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
+        val intentExtras = intent.extras
+        if (intentExtras != null) {
+            val title = intentExtras.getString("message")
+            Toast.makeText(baseContext, title, Toast.LENGTH_LONG).show()
+        }
+
         image.setOnClickListener {
             showPictureDialog()
         }
@@ -94,8 +100,8 @@ class ResultActivity : AppCompatActivity() {
                 try {
                     val bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, contentURI)
                     path = contentURI
-                    val t = saveImage(bitmap)
-                    Toast.makeText(this@ResultActivity, t, Toast.LENGTH_SHORT).show()
+                    saveImage(bitmap)
+//                    Toast.makeText(this@ResultActivity, t, Toast.LENGTH_SHORT).show()
                     image.setImageBitmap(bitmap)
 
                 } catch (e: IOException) {

@@ -25,6 +25,7 @@ class NotificationUtil (var context: Context) {
         notifyIntent.putExtra("title", title)
         notifyIntent.putExtra("message", message)
         notifyIntent.putExtra("NotificationUtil", true)
+        notifyIntent.putExtra("Body", "Aqui vai o conteúdo da notificação")
 
         notifyIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
 
@@ -37,7 +38,6 @@ class NotificationUtil (var context: Context) {
             val importance = NotificationManager.IMPORTANCE_HIGH
             val notificationChannel = NotificationChannel(MainActivity.CHANNEL_ID, MainActivity.CHANNEL_NAME, importance)
             notificationManager.createNotificationChannel(notificationChannel)
-
 
             mNotification = Notification.Builder(context, MainActivity.CHANNEL_ID)
                     .setContentIntent(pendingIntent)
